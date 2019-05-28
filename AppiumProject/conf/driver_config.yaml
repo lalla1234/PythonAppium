@@ -1,0 +1,16 @@
+platformName: Android #设备平台
+#模拟器
+platformVersion: 5.1.1
+deviceName: device  #链接手机，device为手机的设备名称，通过docs命令查看 adb devices
+#真机
+#platformVersion: 5.1.1
+#udid: xxxxx
+#deviceName: device
+appname: app_erweima_release_v51.apk
+appPackage: com.sxhsh   #APK包名
+appActivity: com.sxhsh.activity.SplashActivity   #被测程序启动的Activity
+noReset: False
+unicodeKeyboard: true   #是否支持unicode的键盘，如需输入中文，设置true
+newCommandTimeout: 50   #设置命令超时时间
+ip: 127.0.0.1
+port: 4723
