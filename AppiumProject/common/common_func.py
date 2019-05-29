@@ -1,4 +1,4 @@
-from base.baseview import BaseView
+from base.BaseView import BaseView
 from selenium.common.exceptions import NoSuchElementException
 from common.recordlog import logs
 from selenium.webdriver.common.by import By # ***元素定位***
@@ -16,16 +16,16 @@ class CommonFunction(BaseView):
        y = self.get_window_size()["height"] # y值为1280,返回一个元组(720,1280)
        return x,y
 
-    # 向左滑
-    def swipeLeft(self):
+    # 向右滑
+    def swipeRight(self):
        lef = self.get_size()
        x1 = int(lef[0] * 0.9)
        y1 = int(lef[1] * 0.5)
        x2 = int(lef[0] * 0.1)
        self.get_swipe(x1,y1,x2,y1,1000)
 
-    # 向右滑
-    def swipeRight(self):
+    # 向左滑
+    def swipeLeft(self):
         rig = self.get_size()
         x1 = int(rig[0] * 0.99)
         y1 = int(rig[1] * 0.99)
@@ -44,20 +44,21 @@ class CommonFunction(BaseView):
     def getScreenshot(self,module):
         time = self.getTime()
         image_file = '%s/%s_%s.png'%(screen_path,module,time)
+        logs.info("get %s screenshot"%module)
         self.driver.get_screenshot_as_file(image_file)
 
-    def enter_butn(self): #立即进入
+    def enter_butn(self): #滑动引导页，然后立即进入
         try:
-            btn = self.find_element(*self.btn_enter)
-        except Exception as e:
-            logs.error("No element found")
+            self.swipeLeft()
+        except NoSuchElementException:
+            pass
         else:
-            btn.click()
+            self.find_element(*self.btn_enter).click()
 
 if __name__=="__main__":
     st = StartDriver()
     driver = st.get_driver()
     c = CommonFunction(driver)
-    c.swipeRight()
+    c.swipeLeft()
     c.getScreenshot("startapp")
     c.enter_butn()
