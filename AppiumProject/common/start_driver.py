@@ -21,7 +21,7 @@ class StartDriver(object):
             capabs["appPackage"] = data["appPackage"]
             capabs["appActivity"] = data["appActivity"]
             capabs["noReset"] = data["noReset"]
-            capabs["automationName"] = data["uiautomator2"]
+            capabs["automationName"] = data["automationName"]
             capabs["unicodeKeyboard"] = data["unicodeKeyboard"]
             capabs["newCommandTimeout"] = data["newCommandTimeout"]
             logs.info("start app...")
@@ -30,7 +30,7 @@ class StartDriver(object):
             driver.implicitly_wait(15)
             return driver
         except Exception as e:
-            logs.error('fail to connect devices!')
+            logs.error(e)
 
     def close_app(self):
         driver = self.get_driver().close()

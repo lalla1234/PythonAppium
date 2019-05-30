@@ -214,3 +214,69 @@
 2019-05-30 17:47:16,110 common_func.py[line:43] ERROR: 引导页滑动失败!
 2019-05-30 17:47:42,253 start_driver.py[line:26] INFO: start app...
 2019-05-30 17:48:13,429 common_func.py[line:43] ERROR: 引导页滑动失败!
+2019-05-30 21:14:07,756 run_test.py[line:15] INFO: start run test case！
+2019-05-30 21:14:20,589 start_driver.py[line:33] ERROR: fail to connect devices!
+2019-05-30 21:17:10,020 start_driver.py[line:33] ERROR: fail to connect devices!
+2019-05-30 21:20:57,747 start_driver.py[line:33] ERROR: fail to connect devices!
+2019-05-30 21:20:57,747 common_func.py[line:53] INFO: get startapp screenshot
+2019-05-30 21:21:22,022 start_driver.py[line:33] ERROR: fail to connect devices!
+2019-05-30 21:21:22,022 common_func.py[line:20] ERROR: Failed to get screen size
+2019-05-30 21:21:22,022 common_func.py[line:43] ERROR: 引导页滑动失败!
+2019-05-30 21:21:32,319 start_driver.py[line:33] ERROR: fail to connect devices!
+2019-05-30 21:22:24,908 start_driver.py[line:33] ERROR: 'uiautomator2'
+2019-05-30 21:26:18,509 start_driver.py[line:27] INFO: start app...
+2019-05-30 21:28:00,280 run_test.py[line:15] INFO: start run test case！
+2019-05-30 21:28:00,285 start_driver.py[line:27] INFO: start app...
+2019-05-30 21:29:04,648 common_func.py[line:53] INFO: get login screenshot
+2019-05-30 21:29:04,940 loginPage.py[line:56] INFO: login success!
+2019-05-30 21:29:11,873 start_driver.py[line:27] INFO: start app...
+2019-05-30 21:30:16,092 common_func.py[line:53] INFO: get login screenshot
+2019-05-30 21:30:16,377 loginPage.py[line:56] INFO: login success!
+2019-05-30 21:30:24,998 start_driver.py[line:27] INFO: start app...
+2019-05-30 21:31:28,758 common_func.py[line:53] INFO: get login screenshot
+2019-05-30 21:31:29,041 loginPage.py[line:56] INFO: login success!
+2019-05-30 21:31:35,508 start_driver.py[line:27] INFO: start app...
+2019-05-30 21:32:40,281 common_func.py[line:53] INFO: get login screenshot
+2019-05-30 21:32:40,556 loginPage.py[line:56] INFO: login success!
+2019-05-30 21:40:19,114 run_test.py[line:15] INFO: start run test case！
+2019-05-30 21:40:19,118 start_driver.py[line:27] INFO: start app...
+2019-05-30 21:41:24,706 common_func.py[line:53] INFO: get login screenshot
+2019-05-30 21:41:25,638 loginPage.py[line:77] INFO: login success
+2019-05-30 21:41:32,135 start_driver.py[line:27] INFO: start app...
+2019-05-30 21:42:36,544 common_func.py[line:53] INFO: get login screenshot
+2019-05-30 21:42:39,119 loginPage.py[line:77] INFO: login success
+2019-05-30 21:42:45,858 start_driver.py[line:27] INFO: start app...
+2019-05-30 21:43:50,556 common_func.py[line:53] INFO: get login screenshot
+2019-05-30 21:43:51,079 loginPage.py[line:77] INFO: login success
+2019-05-30 21:43:57,357 start_driver.py[line:27] INFO: start app...
+2019-05-30 21:45:01,084 common_func.py[line:53] INFO: get login screenshot
+2019-05-30 21:45:03,672 loginPage.py[line:77] INFO: login success
+2019-05-30 22:26:44,086 run_test.py[line:15] INFO: start run test case！
+2019-05-30 22:26:44,091 start_driver.py[line:27] INFO: start app...
+2019-05-30 22:27:48,440 common_func.py[line:53] INFO: get login screenshot
+2019-05-30 22:27:49,201 loginPage.py[line:82] INFO: login success
+2019-05-30 22:27:55,497 start_driver.py[line:27] INFO: start app...
+2019-05-30 22:28:58,912 common_func.py[line:53] INFO: get login screenshot
+2019-05-30 22:29:01,468 loginPage.py[line:82] INFO: login success
+2019-05-30 22:29:07,794 start_driver.py[line:27] INFO: start app...
+2019-05-30 22:30:12,075 common_func.py[line:53] INFO: get login screenshot
+2019-05-30 22:30:12,606 loginPage.py[line:82] INFO: login success
+2019-05-30 22:30:18,979 start_driver.py[line:27] INFO: start app...
+2019-05-30 22:31:22,428 common_func.py[line:53] INFO: get login screenshot
+2019-05-30 22:31:24,991 loginPage.py[line:82] INFO: login success
+2019-05-30 23:17:36,246 run_test.py[line:15] INFO: start run test case！
+2019-05-30 23:17:36,251 start_driver.py[line:27] INFO: start app...
+2019-05-30 23:18:40,838 common_func.py[line:53] INFO: get login screenshot
+2019-05-30 23:18:55,169 loginPage.py[line:83] INFO: login success!
+2019-05-30 23:19:01,470 start_driver.py[line:27] INFO: start app...
+2019-05-30 23:20:05,210 common_func.py[line:53] INFO: get login screenshot
+2019-05-30 23:20:20,937 loginPage.py[line:79] INFO: login fail!
+2019-05-30 23:20:20,937 common_func.py[line:53] INFO: get login fail screenshot
+2019-05-30 23:20:27,400 start_driver.py[line:27] INFO: start app...
+2019-05-30 23:21:31,366 common_func.py[line:53] INFO: get login screenshot
+2019-05-30 23:21:47,096 loginPage.py[line:79] INFO: login fail!
+2019-05-30 23:21:47,096 common_func.py[line:53] INFO: get login fail screenshot
+2019-05-30 23:21:53,580 start_driver.py[line:27] INFO: start app...
+2019-05-30 23:22:57,584 common_func.py[line:53] INFO: get login screenshot
+2019-05-30 23:23:12,926 loginPage.py[line:79] INFO: login fail!
+2019-05-30 23:23:12,926 common_func.py[line:53] INFO: get login fail screenshot

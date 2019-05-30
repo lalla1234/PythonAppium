@@ -1,4 +1,4 @@
-from base.BaseView import BaseView
+from base.baseview import BaseView
 from selenium.common.exceptions import NoSuchElementException
 from common.recordlog import logs
 from selenium.webdriver.common.by import By # ***元素定位***

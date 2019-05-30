@@ -16,7 +16,7 @@ class LoginPage(CommonFunction):
     logout_btn = (By.XPATH,"//android.widget.TextView[@text='退出登录']")
     button_left = (By.ID,"com.sxhsh:id/button_left") #弹框，确定
     skip_btn = (By.ID,"com.sxhsh:id/splash_tv_jump")
-    residual_flow = (By.CLASS_NAME,"android.view.View")#登录成功后检测流量球
+    phone_tv = (By.ID,"com.sxhsh:id/tab5_phone_tv")#登录成功后检测手机号
 
     def click_passwd(self):
         self.enter_butn() #点击'立即进入'
@@ -53,7 +53,7 @@ class LoginPage(CommonFunction):
         else:
             self.driver.find_element(*self.login_Button).click()
             self.getScreenshot("login")
-            logs.info("login success!")
+            # logs.info("login success!")
             # self.logoutView()
 
     # 退出登录
@@ -73,11 +73,14 @@ class LoginPage(CommonFunction):
     # 检查登录状态
     def check_login_status(self):
         try:
-            flow_element = self.driver.find_element(*self.residual_flow)
+            self.driver.find_element(*self.ibtn).click()
+            self.find_element(*self.phone_tv)
         except NoSuchElementException:
-            logs.error("No login status element such found!")
+            logs.info("login fail!")
+            self.getScreenshot('login fail') #失败截图
             return False
         else:
+            logs.info("login success!")
             return True
 
 
