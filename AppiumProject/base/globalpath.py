@@ -9,4 +9,7 @@ log_path = BIR+"\log\log.log"
 screen_path = os.path.join(BIR,'screenshots')
 csvpath = os.path.join(BIR,'data','account.csv')
 config_path = os.path.join(BIR,'conf','config.ini')
+report_path = os.path.join(BIR,'report')
+testcase_path = os.path.join(BIR,'test_case')
+
 

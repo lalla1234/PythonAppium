@@ -1,4 +1,7 @@
 from common.recordlog import logs
+from selenium.webdriver.support.ui import WebDriverWait #显示等待
+from selenium.webdriver.support import expected_conditions as EC
+
 class BaseView(object):
 
     def __init__(self,driver):
@@ -7,6 +10,7 @@ class BaseView(object):
     # 查找元素
     def find_element(self,*loc):
         return self.driver.find_element(*loc)
+        # return WebDriverWait(self.driver,20).until(EC.text_to_be_present_in_element(*loc)) #显示等待
 
     # 查找元素列表
     def find_elements(self,*loc):

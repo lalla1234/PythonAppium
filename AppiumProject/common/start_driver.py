@@ -21,14 +21,20 @@ class StartDriver(object):
             capabs["appPackage"] = data["appPackage"]
             capabs["appActivity"] = data["appActivity"]
             capabs["noReset"] = data["noReset"]
+            capabs["automationName"] = data["uiautomator2"]
             capabs["unicodeKeyboard"] = data["unicodeKeyboard"]
             capabs["newCommandTimeout"] = data["newCommandTimeout"]
             logs.info("start app...")
             driver = webdriver.Remote("http://%s:%s/wd/hub"%(data["ip"],data["port"]),capabs)
-            driver.implicitly_wait(10) #设置隐性等待
+            # 设置隐性等待,在规定的时间内页面的所有元素都加载完了就执行下一步，否则一直等到时间截止，然后再继续下一步。
+            driver.implicitly_wait(15)
             return driver
         except Exception as e:
-            raise e
+            logs.error('fail to connect devices!')
+
+    def close_app(self):
+        driver = self.get_driver().close()
+
 
 if __name__ =="__main__":
     dri = StartDriver()
