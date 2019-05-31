@@ -27,13 +27,13 @@ class StartDriver(object):
             logs.info("start app...")
             driver = webdriver.Remote("http://%s:%s/wd/hub"%(data["ip"],data["port"]),capabs)
             # 设置隐性等待,在规定的时间内页面的所有元素都加载完了就执行下一步，否则一直等到时间截止，然后再继续下一步。
-            driver.implicitly_wait(15)
+            # driver.implicitly_wait(15)
             return driver
         except Exception as e:
             logs.error(e)
 
-    def close_app(self):
-        driver = self.get_driver().close()
+    def close_devices(self):
+        driver = self.get_driver().quit()
 
 
 if __name__ =="__main__":

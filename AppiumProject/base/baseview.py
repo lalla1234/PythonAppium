@@ -9,12 +9,19 @@ class BaseView(object):
 
     # 查找元素
     def find_element(self,*loc):
-        return self.driver.find_element(*loc)
-        # return WebDriverWait(self.driver,20).until(EC.text_to_be_present_in_element(*loc)) #显示等待
+        try:
+            WebDriverWait(self.driver, 20).until(EC.visibility_of_element_located(loc))  # 显示等待
+            return self.driver.find_element(*loc)
+        except Exception as e:
+            logs.error('页面未找到%s元素'%loc)
 
     # 查找元素列表
     def find_elements(self,*loc):
-        return self.driver.find_elements(*loc)
+        try:
+            WebDriverWait(self.driver, 20).until(EC.visibility_of_element_located(loc))  # 显示等待
+            return self.driver.find_elements(*loc)
+        except Exception as e:
+            logs.error('页面未找到%s元素'%loc)
 
     # 获取屏幕尺寸
     def get_window_size(self):

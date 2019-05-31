@@ -280,3 +280,32 @@
 2019-05-30 23:22:57,584 common_func.py[line:53] INFO: get login screenshot
 2019-05-30 23:23:12,926 loginPage.py[line:79] INFO: login fail!
 2019-05-30 23:23:12,926 common_func.py[line:53] INFO: get login fail screenshot
+2019-05-31 10:23:00,817 run_test.py[line:15] INFO: start run test case！
+2019-05-31 10:23:00,835 start_driver.py[line:27] INFO: start app...
+2019-05-31 10:24:30,845 common_func.py[line:53] INFO: get login screenshot
+2019-05-31 10:25:13,090 loginPage.py[line:83] INFO: login success!
+2019-05-31 10:25:19,866 start_driver.py[line:27] INFO: start app...
+2019-05-31 10:26:28,981 common_func.py[line:53] INFO: get login screenshot
+2019-05-31 10:26:44,988 loginPage.py[line:79] INFO: login fail!
+2019-05-31 10:26:44,988 common_func.py[line:53] INFO: get login fail screenshot
+2019-05-31 10:26:52,073 start_driver.py[line:27] INFO: start app...
+2019-05-31 10:28:01,388 common_func.py[line:53] INFO: get login screenshot
+2019-05-31 10:28:17,426 loginPage.py[line:79] INFO: login fail!
+2019-05-31 10:28:17,426 common_func.py[line:53] INFO: get login fail screenshot
+2019-05-31 10:28:24,569 start_driver.py[line:27] INFO: start app...
+2019-05-31 12:40:10,172 run_test.py[line:15] INFO: start run test case！
+2019-05-31 12:40:10,176 start_driver.py[line:27] INFO: start app...
+2019-05-31 12:41:09,262 start_driver.py[line:27] INFO: start app...
+2019-05-31 12:42:13,834 start_driver.py[line:27] INFO: start app...
+2019-05-31 12:43:25,749 run_test.py[line:15] INFO: start run test case！
+2019-05-31 12:43:25,752 start_driver.py[line:27] INFO: start app...
+2019-05-31 12:44:18,647 start_driver.py[line:33] ERROR: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+2019-05-31 12:44:18,649 common_func.py[line:20] ERROR: Failed to get screen size
+2019-05-31 12:44:18,649 common_func.py[line:43] ERROR: 引导页滑动失败!
+2019-05-31 12:44:23,681 start_driver.py[line:27] INFO: start app...
+2019-05-31 17:10:24,016 sendEmail.py[line:36] ERROR: {'ss': (550, b'Invalid User: ss')}
+2019-05-31 17:10:49,512 sendEmail.py[line:36] ERROR: {'ss': (550, b'Invalid User: ss')}
+2019-05-31 17:11:22,603 sendEmail.py[line:36] ERROR: (554, b'DT:SPM 163 smtp12,EMCowADnoRSa7_BcY7HdIQ--.39993S2 1559293850,please see http://mail.163.com/help/help_spam_16.htm?ip=117.139.166.12&hostid=smtp12&time=1559293850')
+2019-05-31 17:11:54,447 sendEmail.py[line:36] ERROR: (554, b'DT:SPM 163 smtp12,EMCowACXRju67_BcC8_dIQ--.41833S2 1559293882,please see http://mail.163.com/help/help_spam_16.htm?ip=117.139.166.12&hostid=smtp12&time=1559293882')
+2019-05-31 17:13:54,998 sendEmail.py[line:36] ERROR: (554, b'DT:SPM 163 smtp12,EMCowAAH3Cky8PBctgDeIQ--.41398S2 1559294003,please see http://mail.163.com/help/help_spam_16.htm?ip=117.139.166.12&hostid=smtp12&time=1559294003')

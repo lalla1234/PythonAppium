@@ -3,6 +3,7 @@ import unittest
 from common.recordlog import logs
 import time
 from base.globalpath import report_path,testcase_path
+from common.sendEmail import SendEmail
 
 if __name__=="__main__":
 
@@ -14,4 +15,6 @@ if __name__=="__main__":
         runner = HTMLTestRunner.HTMLTestRunner(stream=rf,title='惠三秦UI自动化测试',description='惠三秦Android端测试用例执行结果')
         logs.info("start run test case！")
         runner.run(load_case)
+    eml = SendEmail()
+    eml.send_email()
 

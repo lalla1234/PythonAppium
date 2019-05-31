@@ -18,7 +18,12 @@ class ConfigData(object):
         except Exception as e:
             logs.error(e)
 
+    def get_email(self,optn):
+        eml_name = self.conf.sections()[0]
+        return self.get_values(eml_name,optn)
+
 if __name__=="__main__":
     c = ConfigData()
-    result = c.get_values("email","host")
+    # result = c.get_values("email","host")
+    result = c.get_email('recipients')
     print(result)
