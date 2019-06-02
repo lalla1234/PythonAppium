@@ -21,4 +21,4 @@ class ReadCsvData(object):
 
 if __name__=="__main__":
     r = ReadCsvData()
-    print(r.get_csv_data(7))
+    print(r.get_csv_data(4))

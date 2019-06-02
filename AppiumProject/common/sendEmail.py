@@ -13,7 +13,7 @@ class SendEmail(object):
         self.host = self.conf.get_email("host")
         self.sender_eml = self.conf.get_email("sender_email")
         self.passwd = self.conf.get_email("password")
-        self.recipient_list = self.conf.get_email("recipients")
+        self.recipient_list = self.conf.get_recipients("recipients")
         self.subject = self.conf.get_email('subject')
         self.content = self.conf.get_email('emicontent')
 
@@ -26,10 +26,10 @@ class SendEmail(object):
         # 构造文字内容邮件
         mtp.attach(MIMEText(self.content,_subtype='plain',_charset='utf-8'))
         # 构造附件
-        attach_file = attach_path + '\%s.html'%(reports) #报告文件
+        attach_file = reports #报告文件
         mit = MIMEText(open(attach_file,'rb').read(),'base64','utf-8')
         mit['Content-Type'] = 'application/octet-stream'
-        mit['Content-Disposition'] = 'attachment; filename="%s.html"'%(reports)  #附件重命名
+        mit['Content-Disposition'] = 'attachment; filename="hsq_UIAutoTestReport.html"'  #附件重命名
         mtp.attach(mit)
         # 发送邮件
         try:
@@ -44,6 +44,5 @@ class SendEmail(object):
 
 if __name__=="__main__":
     s = SendEmail()
-    addrs = ["yaozhangming@51testing.com;15810102634@163.com"]
     s.send_email('2019-05-31 10_23_00_testReport')
 

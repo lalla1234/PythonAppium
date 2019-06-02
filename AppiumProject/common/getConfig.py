@@ -22,8 +22,16 @@ class ConfigData(object):
         eml_name = self.conf.sections()[0]
         return self.get_values(eml_name,optn)
 
+    def get_recipients(self,opname): #获取收件人
+        rec = self.get_email(opname)
+        if rec!=None:
+            re = rec.split(';')
+            return re
+        else:
+            return None
+
 if __name__=="__main__":
     c = ConfigData()
     # result = c.get_values("email","host")
-    result = c.get_email('recipients')
+    result = c.get_recipients('recipients')
     print(result)

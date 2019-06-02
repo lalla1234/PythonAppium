@@ -178,9 +178,9 @@
         
     <div class='page-header'>
         <h1>惠三秦UI自动化测试</h1>
-    <p class='attribute'><strong>开始时间:</strong> 2019-05-31 10:23:00</p>
-<p class='attribute'><strong>运行时长:</strong> 0:06:26.557404</p>
-<p class='attribute'><strong>状态:</strong> 通过 1 失败 2 错误 1</p>
+    <p class='attribute'><strong>开始时间:</strong> 2019-06-01 18:35:01</p>
+<p class='attribute'><strong>运行时长:</strong> 0:05:43.255587</p>
+<p class='attribute'><strong>状态:</strong> 通过 1 失败 3</p>
 
     </div>
     <div style="float: left;width:50%;"><p class='description'>惠三秦Android端测试用例执行结果</p></div>
@@ -211,12 +211,12 @@
             <td>查看</td>
         </tr>
         
-    <tr class='errorClass'>
+    <tr class='failClass'>
         <td>test_login.TestLogin: 登录模块</td>
         <td>4</td>
         <td>1</td>
-        <td>2</td>
-        <td>1</td>
+        <td>3</td>
+        <td>0</td>
         <td><a href="javascript:showClassDetail('c1',4)">详情</a></td>
     </tr>
 
@@ -233,7 +233,7 @@
         失败</a>
     <div id='div_ft1.2' class="popup_window">
         <pre>ft1.2: Traceback (most recent call last):
-  File "E:\PythonAppium\AppiumProject\test_case\test_login.py", line 32, in test_paawd_null
+  File "D:\PythonAppium\AppiumProject\test_case\test_login.py", line 32, in test_paawd_null
     self.assertTrue(logn.check_login_status(),"login fail")
 AssertionError: False is not true : login fail
 </pre>
@@ -250,7 +250,7 @@ AssertionError: False is not true : login fail
         失败</a>
     <div id='div_ft1.3' class="popup_window">
         <pre>ft1.3: Traceback (most recent call last):
-  File "E:\PythonAppium\AppiumProject\test_case\test_login.py", line 40, in test_phone_err
+  File "D:\PythonAppium\AppiumProject\test_case\test_login.py", line 40, in test_phone_err
     self.assertTrue(logn.check_login_status(),"login fail")
 AssertionError: False is not true : login fail
 </pre>
@@ -260,31 +260,16 @@ AssertionError: False is not true : login fail
 </tr>
 
 <tr id='ft1.4' class='none'>
-    <td class='errorCase'><div class='testcase'>test_phone_null: 用户名为空</div></td>
+    <td class='failCase'><div class='testcase'>test_phone_null: 用户名为空</div></td>
     <td colspan='5' align='center'>
     <!--css div popup start-->
     <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.4')" >
-        错误</a>
+        失败</a>
     <div id='div_ft1.4' class="popup_window">
         <pre>ft1.4: Traceback (most recent call last):
-  File "E:\PythonAppium\AppiumProject\test_case\test_login.py", line 23, in test_phone_null
-    logn.loginView(data[0], data[1])
-  File "E:\PythonAppium\AppiumProject\pageObject\loginPage.py", line 46, in loginView
-    self.click_passwd()
-  File "E:\PythonAppium\AppiumProject\pageObject\loginPage.py", line 23, in click_passwd
-    self.driver.find_element(*self.paswd_Button).click() #点击密码登录
-  File "E:\python\lib\site-packages\appium\webdriver\webdriver.py", line 270, in find_element
-    'value': value})['value']
-  File "E:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-  File "E:\python\lib\site-packages\appium\webdriver\errorhandler.py", line 29, in check_response
-    raise wde
-  File "E:\python\lib\site-packages\appium\webdriver\errorhandler.py", line 24, in check_response
-    super(MobileErrorHandler, self).check_response(response)
-  File "E:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
-
+  File "D:\PythonAppium\AppiumProject\test_case\test_login.py", line 24, in test_phone_null
+    self.assertTrue(logn.check_login_status(),"login fail")
+AssertionError: False is not true : login fail
 </pre>
     </div>
     <!--css div popup end-->
@@ -295,8 +280,8 @@ selenium.common.exceptions.NoSuchElementException: Message: An element could not
             <td>总计</td>
             <td>4</td>
             <td>1</td>
-            <td>2</td>
-            <td>1</td>
+            <td>3</td>
+            <td>0</td>
             <td>&nbsp;</td>
         </tr>
     </table>
@@ -330,8 +315,8 @@ selenium.common.exceptions.NoSuchElementException: Message: An element could not
                     center: ['50%', '60%'],
                     data:[
                         {value:1, name:'通过'},
-                        {value:2, name:'失败'},
-                        {value:1, name:'错误'}
+                        {value:3, name:'失败'},
+                        {value:0, name:'错误'}
                     ],
                     itemStyle: {
                         emphasis: {

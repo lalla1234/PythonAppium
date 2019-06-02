@@ -36,7 +36,7 @@ class CommonFunction(BaseView):
             x2 = int(rig[0] * 0.15)
             s = 0
             time.sleep(2)
-            while s<5:
+            while s<4:
                 self.get_swipe(x1,y1,x2,x1,1000)
                 s+=1
         except Exception as e:

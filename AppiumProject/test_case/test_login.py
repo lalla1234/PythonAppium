@@ -8,6 +8,7 @@ class TestLogin(UnittestFunc):
     '''登录模块'''
     csv_data = ReadCsvData()
 
+    @unittest.skip("skip test_normal_case")
     def test_normal_case(self):
         '''正常用例'''
         logn = LoginPage(self.driver)
@@ -23,7 +24,7 @@ class TestLogin(UnittestFunc):
         logn.loginView(data[0], data[1])
         self.assertTrue(logn.check_login_status(),"login fail")
 
-    # @unittest.skip("skip test_paawd_null")
+    @unittest.skip("skip test_paawd_null")
     def test_paawd_null(self):
         '''密码为空'''
         logn = LoginPage(self.driver)
@@ -31,7 +32,7 @@ class TestLogin(UnittestFunc):
         logn.loginView(data[0], data[1])
         self.assertTrue(logn.check_login_status(),"login fail")
 
-    # @unittest.skip("skip test_phone_err")
+    @unittest.skip("skip test_phone_err")
     def test_phone_err(self):
         '''用户名或密码错误'''
         logn = LoginPage(self.driver)

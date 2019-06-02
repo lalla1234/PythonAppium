@@ -12,5 +12,6 @@ config_path = os.path.join(BIR,'conf','config.ini')
 report_path = os.path.join(BIR,'report')
 testcase_path = os.path.join(BIR,'test_case')
 attach_path = os.path.join(BIR,'report') #邮件附件
+appium_log_path = os.path.join(BIR,r'log\appium_log')
 
 
