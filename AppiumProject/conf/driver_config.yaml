@@ -9,7 +9,7 @@ deviceName: device  #链接手机，device为手机的设备名称，通过docs�
 appname: app_erweima_release_v51.apk
 appPackage: com.sxhsh   #APK包名
 appActivity: com.sxhsh.activity.SplashActivity   #被测程序启动的Activity
-noReset: False #是否重置，设置为true不会重置，比如之前做过引导页、等等，false类似于出厂设置
+noReset: true #是否重置，设置为true不会重置，比如之前做过引导页、等等，false类似于出厂设置
 unicodeKeyboard: true   #是否支持unicode的键盘，如需输入中文，设置true
 newCommandTimeout: 50   #设置命令超时时间
 automationName: uiautomator2

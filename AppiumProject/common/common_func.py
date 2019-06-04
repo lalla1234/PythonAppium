@@ -9,6 +9,7 @@ class CommonFunction(BaseView):
     '''公共方法，继承Baseview'''
 
     btn_enter = (By.ID,"com.sxhsh:id/guide_login")
+    skip_btn = (By.ID, "com.sxhsh:id/splash_tv_jump")
 
     # 获取屏幕滑动尺寸
     def get_size(self):
@@ -18,6 +19,16 @@ class CommonFunction(BaseView):
             return x,y
         except Exception as e:
             logs.error("Failed to get screen size")
+
+    # 检测app启动弹出广告页
+    def skip_page(self):
+        try:
+            skip_element = self.driver.find_element(*self.skip_btn)
+        except NoSuchElementException:
+            pass
+        else:
+            self.getScreenshot("skipPage")
+            skip_element.click()
 
     # 向右滑
     def swipeRight(self):
@@ -41,6 +52,10 @@ class CommonFunction(BaseView):
                 s+=1
         except Exception as e:
             logs.error("引导页滑动失败!")
+
+    # 小范围滑动,获取指定区域范围
+    def swipeSamll(self):
+        pass
 
     def getTime(self):
         self.now_time = time.strftime("%Y-%m-%d %H_%M_%S")

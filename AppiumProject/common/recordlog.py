@@ -1,8 +1,16 @@
 import logging,os
+import colorlog
 from base.globalpath import log_path
 
 def recordLogging(loggpath=None):
     '''日志模块'''
+    color_logs = {
+        'DEBUG':'cyan',
+        'INFO':'green',
+        'WARNING':'yellow',
+        'ERROR':'red',
+        'CRITICAL':'red',
+    }
     if loggpath!=None:
         loggpath = loggpath
     loggpath = log_path
@@ -14,9 +22,12 @@ def recordLogging(loggpath=None):
         fh = logging.FileHandler(loggpath,encoding='utf-8')
         fh.setLevel(logging.DEBUG)
         # 日志打印在屏幕
-        sh = logging.StreamHandler()
-        sh.setLevel(logging.INFO)
-        formt = logging.Formatter('%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s: %(message)s')
+        # sh = logging.StreamHandler()
+        sh = colorlog.StreamHandler() #控制台日志输出颜色
+        sh.setLevel(logging.DEBUG)
+        # formt = logging.Formatter('%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s: %(message)s')
+        formt = colorlog.ColoredFormatter('%(log_color)s %(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s: %(message)s',
+                                          log_colors=color_logs)
         fh.setFormatter(formt)
         sh.setFormatter(formt)
         # 给logger对象添加handler
