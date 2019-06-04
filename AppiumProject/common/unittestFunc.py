@@ -13,5 +13,6 @@ class UnittestFunc(unittest.TestCase):
     def tearDown(self):
         # logs.info("=====tearDown=====")
         time.sleep(5)
-        self.driver.close_app()
+        # self.driver.close_app()
+        self.driver.quit()
 

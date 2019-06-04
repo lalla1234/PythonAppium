@@ -21,13 +21,13 @@ class StartDriver(object):
             capabs["appPackage"] = data["appPackage"]
             capabs["appActivity"] = data["appActivity"]
             capabs["noReset"] = data["noReset"]
-            capabs["automationName"] = data["automationName"]
+            capabs["automationName"] = data["automationName"] #打开这行可能会导致运行不稳定
             capabs["unicodeKeyboard"] = data["unicodeKeyboard"]
             capabs["newCommandTimeout"] = data["newCommandTimeout"]
             logs.info("start app...")
             driver = webdriver.Remote("http://%s:%s/wd/hub"%(data["ip"],data["port"]),capabs)
             # 设置隐性等待,在规定的时间内页面的所有元素都加载完了就执行下一步，否则一直等到时间截止，然后再继续下一步。
-            driver.implicitly_wait(15)
+            driver.implicitly_wait(20)
             return driver
         except Exception as e:
             logs.error(e)
