@@ -16,7 +16,7 @@ class TestLogin(UnittestFunc):
         logn.loginView(data[0],data[1])
         self.assertTrue(logn.check_login_status())
 
-    # @unittest.skip("skip test_phone_null")
+    @unittest.skip("skip test_phone_null")
     def test_phone_null(self):
         '''用户名为空'''
         logn = LoginPage(self.driver)
@@ -24,7 +24,7 @@ class TestLogin(UnittestFunc):
         logn.loginView(data[0], data[1])
         self.assertTrue(logn.check_login_status(),"login fail")
 
-    # @unittest.skip("skip test_paawd_null")
+    @unittest.skip("skip test_paawd_null")
     def test_paawd_null(self):
         '''密码为空'''
         logn = LoginPage(self.driver)
@@ -32,7 +32,7 @@ class TestLogin(UnittestFunc):
         logn.loginView(data[0], data[1])
         self.assertTrue(logn.check_login_status(),"login fail")
 
-    # @unittest.skip("skip test_phone_err")
+    @unittest.skip("skip test_phone_err")
     def test_phone_err(self):
         '''用户名或密码错误'''
         logn = LoginPage(self.driver)

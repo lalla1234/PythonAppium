@@ -30,7 +30,8 @@ class StartDriver(object):
             driver.implicitly_wait(20)
             return driver
         except Exception as e:
-            logs.error(e)
+            logs.error("Appium服务未启动或设备devices未连接!")
+            driver.quit()
 
     def close_devices(self):
         driver = self.get_driver().close()

@@ -10,36 +10,16 @@ class LoginPage(CommonFunction):
     phonenum_element = (By.ID,"com.sxhsh:id/et_pwd_login_username")
     password_element = (By.ID,"com.sxhsh:id/et_pwd_login_pwd")
     login_Button = (By.CLASS_NAME,"android.widget.Button")
-    close_btn = (By.ID,"com.sxhsh:id/popup_advert_close_btn")
     ibtn = (By.ID,"com.sxhsh:id/tab5_ll") #我元素
     setting_btn = (By.ID,"com.sxhsh:id/ll_setting")
     logout_btn = (By.XPATH,"//android.widget.TextView[@text='退出登录']")
     button_left = (By.ID,"com.sxhsh:id/button_left") #弹框，确定
-    skip_btn = (By.ID,"com.sxhsh:id/splash_tv_jump")
+
     phone_tv = (By.ID,"com.sxhsh:id/tab5_phone_tv")#登录成功后检测手机号
 
     def click_passwd(self):
         self.enter_butn() #点击'立即进入'
         self.driver.find_element(*self.paswd_Button).click() #点击密码登录
-
-    # 启动app广告页
-    def skip_page(self):
-        try:
-            skip_element = self.driver.find_element(*self.skip_btn)
-        except NoSuchElementException:
-            pass
-        else:
-            self.getScreenshot("skipPage")
-            skip_element.click()
-
-    # 检查登录成功后弹框
-    def check_bounced(self):
-        try:
-            clo_element = self.driver.find_element(*self.close_btn)
-        except NoSuchElementException:
-            pass
-        else:
-            clo_element.click()
 
     # 登录页面
     def loginView(self,phone_num,password):

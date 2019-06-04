@@ -15,6 +15,6 @@ if __name__=="__main__":
         runner = HTMLTestRunner.HTMLTestRunner(stream=rf,title='惠三秦UI自动化测试',description='惠三秦Android端测试用例执行结果')
         logs.info("start run test case！")
         runner.run(load_case)
-    SendEmail().send_email(report_name)
+    # SendEmail().send_email(report_name)
 
 
