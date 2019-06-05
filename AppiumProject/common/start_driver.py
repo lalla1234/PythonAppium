@@ -27,11 +27,11 @@ class StartDriver(object):
             logs.info("start app...")
             driver = webdriver.Remote("http://%s:%s/wd/hub"%(data["ip"],data["port"]),capabs)
             # 设置隐性等待,在规定的时间内页面的所有元素都加载完了就执行下一步，否则一直等到时间截止，然后再继续下一步。
-            driver.implicitly_wait(20)
+            driver.implicitly_wait(10)
             return driver
         except Exception as e:
-            logs.error("Appium服务未启动或设备devices未连接!")
-            driver.quit()
+            logs.error("Appium服务未启动或设备devices未连接!",e)
+            exit()
 
     def close_devices(self):
         driver = self.get_driver().close()

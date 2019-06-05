@@ -8,11 +8,12 @@ class CommunPage(CommonFunction):
     '''通信页面'''
     banner = (By.ID,"com.sxhsh:id/TANGRAM_VIEW_CONTAINER_ID") #通信首页banner
     flow_ball_btn = (By.ID,"com.sxhsh:id/tv_residual_flow")
-    flow_btn = (By.XPATH,"//android.widget.TextView[@text='流量币']") #流量币
+    flow_btn = (By.ID,"com.sxhsh:id/iv_cell_text_with_top_text_corner") #流量币
     exchange_btn = (By.XPATH,"//android.widget.TextView[@text='兑换']")
     exchange_flow_btn = (By.ID,"com.sxhsh:id/btn_do_exchange") #兑换流量
     button_left = (By.ID,"com.sxhsh:id/button_left") #弹框点击确认
     back_btn = (By.ID,"com.sxhsh:id/iv_toolbar_back_icon")
+    flow_total_ele = (By.XPATH,"//android.widget.TextView[@resource-id='com.sxhsh:id/tv_user_total_coin']") #流量币总数
 
     # 通信首页banner广告滑动
     def sliding_banner(self):
@@ -33,15 +34,28 @@ class CommunPage(CommonFunction):
         except NoSuchElementException:
             logs.error("the flow_ball element not found")
 
+    # 流量币总数
+    # def flow_total(self):
+    #     try:
+    #         flows = self.driver.find_elements(*self.flow_btn)
+    #         flows[2].click()
+    #         ele = self.driver.find_element(*self.flow_total_ele)
+    #         total = int(ele.get_attribute("text"))
+    #     except NoSuchElementException:
+    #         logs.error("not found flow_total_element")
+    #     else:
+    #         return total
+
     # 流量币
     def flow_coin(self):
         # self.skip_page()
         self.check_bounced()
         try:
-            self.driver.find_element(*self.flow_btn).click()
+            flows = self.driver.find_elements(*self.flow_btn)
         except NoSuchElementException:
-            logs.error("the flow_coin element not found")
+            logs.error("the flow_btn element not found")
         else:
+            flows[2].click()
             self.driver.find_element(*self.exchange_btn).click()
             exc_list =self.driver.find_elements(*self.exchange_flow_btn) #页面有多个相同按钮，读取列表形式在切片取值
             try:
@@ -56,7 +70,21 @@ class CommunPage(CommonFunction):
             finally:
                 self.find_element(*self.back_btn).click()
 
+    # 验证流量币是否兑换成功
+    def check_flow_exchange_successful(self):
+        try:
+            ele = self.driver.find_element(*self.flow_total_ele)
+            total = int(ele.get_attribute("text"))
+        except NoSuchElementException:
+            logs.error("the folw_total element not found")
+            return False
+        else:
+            total-=300
+            print(total)
+            return True
+
 if __name__=="__main__":
     driver = StartDriver().get_driver()
     com = CommunPage(driver)
     com.flow_coin()
+    com.check_flow_exchange_successful()

@@ -32,3 +32,23 @@ class BaseView(object):
     # 滑动屏幕
     def get_swipe(self,start_x, start_y, end_x, end_y, duration=None): #对原生方法二次封装，duration持续的时间
         return self.driver.swipe(start_x, start_y, end_x, end_y,duration)
+
+    # H5页面元素
+    def get_H5element(self):
+        # H5上下文
+        contexts = self.driver.contexts
+        print("contexts：",contexts)
+        # 切换进webview视图
+        # view_context = contexts
+        # if view_context in contexts:
+        #     self.driver.switch_to.context(view_context)
+        #     return True
+        # else:
+        #     print("没有切换到相应的环境下!")
+        #     return False
+        self.driver.switch_to.context(contexts)
+
+
+
+
+
