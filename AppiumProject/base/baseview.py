@@ -46,7 +46,7 @@ class BaseView(object):
         # else:
         #     print("没有切换到相应的环境下!")
         #     return False
-        self.driver.switch_to.context(contexts)
+        # self.driver.switch_to.context(contexts)
 
 
 

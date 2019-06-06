@@ -24,6 +24,7 @@ class FlowZone(CommonFunction):
             btns.click()
 
     def flow_handle(self):
+        self.login_key()
         self.flow_zone_btn()
         try:
            imags = self.driver.find_elements(*self.image_btn)

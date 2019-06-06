@@ -15,14 +15,17 @@ class StartDriver(object):
             capabs["platformName"] = data["platformName"]
             capabs["platformVersion"] = data["platformVersion"]
             capabs["deviceName"] = data["deviceName"]
-            base_dir = os.path.dirname(os.path.dirname(__file__)) #获取当前文件根目录
-            app_path = os.path.join(base_dir,'app',data["appname"])
+            # capabs["udid"] = data["udid"]
+            # base_dir = os.path.dirname(os.path.dirname(__file__)) #获取当前文件根目录
+            base_dir = r"E:\appium_apk" #apk在电脑上的路径，启动成功后会自动安装apk
+            # app_path = os.path.join(base_dir,'app',data["appname"])
+            app_path = os.path.join(base_dir,data["appname"])
             capabs["app"] = app_path
             capabs["appPackage"] = data["appPackage"]
             capabs["appActivity"] = data["appActivity"]
             capabs["noReset"] = data["noReset"]
             capabs["automationName"] = data["automationName"] #打开这行可能会导致运行不稳定
-            capabs["unicodeKeyboard"] = data["unicodeKeyboard"]
+            # capabs["unicodeKeyboard"] = data["unicodeKeyboard"]
             capabs["newCommandTimeout"] = data["newCommandTimeout"]
             logs.info("start app...")
             driver = webdriver.Remote("http://%s:%s/wd/hub"%(data["ip"],data["port"]),capabs)

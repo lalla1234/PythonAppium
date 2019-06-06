@@ -7,7 +7,7 @@ from common.sendEmail import SendEmail
 
 if __name__=="__main__":
 
-    load_case = unittest.defaultTestLoader.discover(testcase_path,'test_login.py') #加载用例，固定的
+    load_case = unittest.defaultTestLoader.discover(testcase_path,'test_flowcoin.py') #加载用例，固定的
     # # load_case = unittest.defaultTestLoader.discover(testcase_path,'test_*.py') #模糊匹配
     now = time.strftime("%Y-%m-%d %H_%M_%S")
     report_name = report_path+"\%s_%s"%(now,"testReport.html") #报告名称

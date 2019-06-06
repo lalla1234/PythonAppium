@@ -1,12 +1,14 @@
 platformName: Android #设备平台
 #模拟器
-platformVersion: 5.1.1
-deviceName: device  #链接手机，device为手机的设备名称，通过docs命令查看 adb devices
-#真机
 #platformVersion: 5.1.1
-#udid: xxxxx
-#deviceName: device
-appname: app_erweima_release_v51.apk
+#deviceName: device  #链接手机，device为手机的设备名称，通过docs命令查看 adb devices
+
+#真机
+platformVersion: 7.1.1
+udid: 9fe5c129 #设备UUID，可通过docs->adb devices -l查看是否连接成功
+deviceName: 9fe5c129  #测试设备型号
+
+appname: hsqv1.5.7_release.apk
 appPackage: com.sxhsh   #APK包名
 appActivity: com.sxhsh.activity.SplashActivity   #被测程序启动的Activity
 noReset: true #是否重置，设置为true不会重置，比如之前做过引导页、等等，false类似于出厂设置

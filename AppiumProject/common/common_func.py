@@ -11,6 +11,7 @@ class CommonFunction(BaseView):
     btn_enter = (By.ID,"com.sxhsh:id/guide_login")
     skip_btn = (By.ID, "com.sxhsh:id/splash_tv_jump")
     close_btn = (By.ID, "com.sxhsh:id/popup_advert_close_btn")
+    login_key_btn = (By.ID,"com.sxhsh:id/btn_pwd_login_key")
 
     # 获取屏幕滑动尺寸
     def get_size(self):
@@ -86,6 +87,13 @@ class CommonFunction(BaseView):
             logs.error("启动失败!")
         else:
             self.find_element(*self.btn_enter).click()
+
+    # 一键登录
+    def login_key(self):
+        try:
+            self.find_element(*self.login_key_btn).click()
+        except NoSuchElementException:
+            pass
 
 if __name__=="__main__":
     st = StartDriver()

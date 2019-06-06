@@ -36,6 +36,11 @@ class LoginPage(CommonFunction):
             # logs.info("login success!")
             # self.logoutView()
 
+    # 中移动一键登录
+    def onekey_login(self):
+        self.enter_butn()
+        self.login_key()
+
     # 退出登录
     def logoutView(self):
         try:
@@ -67,4 +72,5 @@ class LoginPage(CommonFunction):
 if __name__=="__main__":
     driver = StartDriver().get_driver()
     login = LoginPage(driver)
-    login.loginView("18392117474","test123456")
+    # login.loginView("18392117474","test123456")
+    login.onekey_login()
