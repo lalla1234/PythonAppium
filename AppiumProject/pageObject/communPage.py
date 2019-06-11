@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 from common.recordlog import logs
 from common.start_driver import StartDriver
+from selenium.webdriver.support.ui import WebDriverWait
 
 class CommunPage(CommonFunction):
     '''通信页面'''
@@ -14,7 +15,9 @@ class CommunPage(CommonFunction):
     button_left = (By.ID,"com.sxhsh:id/button_left") #弹框点击确认
     back_btn = (By.ID,"com.sxhsh:id/iv_toolbar_back_icon")
     flow_total_ele = (By.XPATH,"//android.widget.TextView[@resource-id='com.sxhsh:id/tv_user_total_coin']") #流量币总数
-
+    phone_pay_ele = (By.CLASS_NAME,"android.webkit.WebView")
+    phone_pay_btn = (By.XPATH, "//android.widget.TextView[@text='缴话费']")
+    input_phone = (By.ID,"serialNumber")
 
     # 通信首页banner广告滑动
     def sliding_banner(self):
@@ -85,8 +88,23 @@ class CommunPage(CommonFunction):
             self.find_element(*self.back_btn).click()
             return flow_coin_total
 
+    # 话费支付
+    def phone_pay(self):
+        try:
+            self.driver.find_element(*self.phone_pay_btn).click()
+            # self.driver.find_element(*self.phone_pay_ele)
+            # 显示等待
+            WebDriverWait(driver,8).until(lambda x:x.find_element_by_id('com.sxhsh:id/webview'))
+        except NoSuchElementException:
+            logs.error("not found phone_pay_ele element")
+        else:
+            self.get_H5element("WEBVIEW_com.android.browser")
+            self.driver.find_element(*self.input_phone).send_keys('18293117474')
+            # self.switch_to_default()
+
+
 if __name__=="__main__":
     driver = StartDriver().get_driver()
     com = CommunPage(driver)
-    print(com.flow_coin())
+    print(com.phone_pay())
     # print(com.check_flow_exchange_successful())

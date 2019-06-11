@@ -34,20 +34,21 @@ class BaseView(object):
         return self.driver.swipe(start_x, start_y, end_x, end_y,duration)
 
     # H5页面元素
-    def get_H5element(self):
+    def get_H5element(self,cont):
         # H5上下文
         contexts = self.driver.contexts
         print("contexts：",contexts)
         # 切换进webview视图
-        # view_context = contexts
-        # if view_context in contexts:
-        #     self.driver.switch_to.context(view_context)
-        #     return True
-        # else:
-        #     print("没有切换到相应的环境下!")
-        #     return False
-        # self.driver.switch_to.context(contexts)
+        if cont in contexts:
+            self.driver.switch_to.context(cont)
+            return True
+        else:
+            print("没有找到对应webview!")
+            return False
 
+    # 切换到默认的context
+    def switch_to_default(self):
+       return self.driver.switch_to.context("NATIVE_APP")
 
 
 
