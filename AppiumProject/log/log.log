@@ -728,3 +728,15 @@
 2019-06-10 15:26:07,989 start_driver.py[line:30] INFO: start app...
 2019-06-10 15:29:13,111 start_driver.py[line:30] INFO: start app...
 2019-06-10 16:54:47,001 start_driver.py[line:30] INFO: start app...
+2019-06-12 11:17:06,500 recordlog.py[line:40] ERROR: failed
+2019-06-12 11:17:06,500 recordlog.py[line:41] INFO: success
+2019-06-12 11:17:06,500 recordlog.py[line:42] WARNING: risk
+2019-06-12 11:18:26,132 recordlog.py[line:40] ERROR: failed
+2019-06-12 11:18:26,132 recordlog.py[line:41] INFO: success
+2019-06-12 11:18:26,132 recordlog.py[line:42] WARNING: risk
+2019-06-12 11:18:36,841 recordlog.py[line:40] ERROR: failed
+2019-06-12 11:18:36,857 recordlog.py[line:41] INFO: success
+2019-06-12 11:18:36,857 recordlog.py[line:42] WARNING: risk
+2019-06-12 11:19:09,670 recordlog.py[line:40] ERROR: failed
+2019-06-12 11:19:09,670 recordlog.py[line:41] INFO: success
+2019-06-12 11:19:09,670 recordlog.py[line:42] WARNING: risk
