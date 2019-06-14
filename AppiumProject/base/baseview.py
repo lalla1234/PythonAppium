@@ -16,6 +16,10 @@ class BaseView(object):
         #     logs.error('页面未找到%s元素'%loc)
         return self.driver.find_element(*loc)
 
+    # 获取content-desc元素
+    def find_element_by_accessibility_id(self,loc):
+        return self.driver.find_element_by_accessibility_id(loc)
+
     # 查找元素列表
     def find_elements(self,*loc):
         # try:
